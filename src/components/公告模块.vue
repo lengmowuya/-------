@@ -1,13 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import { defineProps } from 'vue';
 
+interface Notice {
+  title: string
+  dateTime: string
+  contentText: string
+}
 
-defineProps({
-  notice: {
-    type: Object,
-    required: true
-  }
-});
+defineProps<{
+  notice: Notice
+}>();
 // var showDetails = false;
 
 import { useCounterStore } from '@/stores/counter';
